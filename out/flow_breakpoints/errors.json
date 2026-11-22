@@ -1,0 +1,13 @@
+{
+  "errors": [
+    {
+      "warehouse": "WH1",
+      "material": "M2",
+      "error": "退料引用的领料单 NO-SUCH-DOC 不存在或已全部退回",
+      "error_seq": 5,
+      "error_action_id": "BAD-REF",
+      "processed_before_break": 3,
+      "skipped_duplicates": 1
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+line_id,warehouse,material,doc_no,issue_seq,batch,age_start,receipt_seq,seg_start,seg_end,qty,returned_qty,outstanding_qty
+0,WH-北区,PX-01,LL-2026-001,4,B2026A,2026-01-05,1,70,100,30,0,30
+1,WH-北区,PX-01,LL-2026-001,4,B2026B,2026-03-05,2,0,20,20,0,20
+2,WH-北区,PX-01,LL-2026-002,6,B2026A,2026-01-05,1,0,30,30,5,25
+3,WH-北区,PX-01,LL-2026-002,6,B2026B,2026-03-05,2,20,30,10,10,0

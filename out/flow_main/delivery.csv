@@ -1,0 +1,7 @@
+line_id,warehouse,material,doc_no,issue_seq,batch,age_start,receipt_seq,seg_start,seg_end,qty,returned_qty,outstanding_qty
+0,WH1,M1,D1,4,B-OLD,2026-01-10,1,60,100,40,20,20
+1,WH1,M1,D1,4,B-NEW,2026-02-15,2,0,10,10,10,0
+2,WH1,M1,D2,6,B-OLD,2026-01-10,1,0,40,40,13,27
+3,WH1,M1,D2,6,B-NEW,2026-02-15,2,10,40,30,30,0
+4,WH1,M1,D3,9,B-OLD,2026-01-10,1,40,60,20,0,20
+5,WH1,M1,D3,9,B-NEW,2026-02-15,2,40,50,10,0,10

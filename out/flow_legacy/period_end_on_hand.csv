@@ -1,0 +1,4 @@
+warehouse,material,state,location,holder,batch,age_start,receipt_seq,seg_start,seg_end,qty
+WH-北区,PX-01,NORMAL,L1,,B2026A,2026-01-05,1,25,30,5
+WH-北区,PX-01,NORMAL,L1,,B2026B,2026-03-05,2,20,30,10
+WH-北区,PX-01,NORMAL,A,,B2026B,2026-03-05,2,30,60,30

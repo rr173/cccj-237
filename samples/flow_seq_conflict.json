@@ -1,0 +1,4 @@
+[
+  {"seq": 1, "action_id": "R1", "op": "receive", "material": "M3", "warehouse": "WH1", "batch": "B1", "age_start": "2026-03-01", "qty": 50, "location": "A"},
+  {"seq": 1, "action_id": "R2", "op": "receive", "material": "M3", "warehouse": "WH1", "batch": "B2", "age_start": "2026-03-02", "qty": 70, "location": "A"}
+]

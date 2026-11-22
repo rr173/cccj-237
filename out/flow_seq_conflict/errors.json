@@ -1,0 +1,13 @@
+{
+  "errors": [
+    {
+      "warehouse": "WH1",
+      "material": "M3",
+      "error": "顺序号冲突：seq=1 同时被动作 'R1' 与 'R2' 占用",
+      "error_seq": 1,
+      "error_action_id": "R2",
+      "processed_before_break": 0,
+      "skipped_duplicates": 0
+    }
+  ]
+}

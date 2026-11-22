@@ -1,0 +1,2 @@
+warehouse,material,received_total,normal_total,isolated_total,issued_outstanding_total,live_total,delivery_total,returned_total,conserved,coverage_ok
+WH9,M4,3000000,2999999,0,1,3000000,2999999,2999998,True,True

@@ -1,0 +1,19 @@
+[
+  {
+    "material": "M1",
+    "warehouse": "WH1",
+    "received_total": 180,
+    "state_totals": {
+      "NORMAL": 103,
+      "ISOLATED": 0,
+      "ISSUED": 77
+    },
+    "issued_outstanding_total": 77,
+    "delivery_total": 150,
+    "returned_total": 73,
+    "live_total": 180,
+    "conserved": true,
+    "coverage_ok": true,
+    "coverage_errors": []
+  }
+]

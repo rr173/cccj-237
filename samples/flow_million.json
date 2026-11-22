@@ -1,0 +1,7 @@
+[
+  {"seq": 1, "action_id": "R-BIG", "op": "receive", "material": "M4", "warehouse": "WH9", "batch": "BIG-BATCH", "age_start": "2026-01-01", "qty": 3000000, "location": "BULK"},
+  {"seq": 2, "action_id": "ISO-BIG", "op": "isolate", "material": "M4", "warehouse": "WH9", "qty": 1500000, "from_location": "BULK"},
+  {"seq": 3, "action_id": "REL-BIG", "op": "release", "material": "M4", "warehouse": "WH9", "qty": 1500000, "isolate_id": "ISO-BIG", "location": "BULK"},
+  {"seq": 4, "action_id": "D-BIG", "op": "issue", "material": "M4", "warehouse": "WH9", "ref_doc": "D-BIG", "qty": 2999999},
+  {"seq": 5, "action_id": "RT-BIG", "op": "return", "material": "M4", "warehouse": "WH9", "ref_doc": "D-BIG", "qty": 2999998, "location": "BULK"}
+]

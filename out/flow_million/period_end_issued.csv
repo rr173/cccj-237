@@ -1,0 +1,2 @@
+warehouse,material,state,location,holder,batch,age_start,receipt_seq,seg_start,seg_end,qty
+WH9,M4,ISSUED,,D-BIG,BIG-BATCH,2026-01-01,1,0,1,1

@@ -1,0 +1,9 @@
+[
+  {"seq": 1, "action_id": "R1", "op": "receive", "material": "M2", "warehouse": "WH1", "batch": "B1", "age_start": "2026-03-01", "qty": 100, "location": "A"},
+  {"seq": 2, "action_id": "D1", "op": "issue", "material": "M2", "warehouse": "WH1", "ref_doc": "D1", "qty": 40},
+
+  {"seq": 3, "action_id": "D1-DUP", "op": "issue", "material": "M2", "warehouse": "WH1", "ref_doc": "D1", "qty": 40},
+  {"seq": 4, "action_id": "D1-DUP", "op": "issue", "material": "M2", "warehouse": "WH1", "ref_doc": "D1", "qty": 40},
+
+  {"seq": 5, "action_id": "BAD-REF", "op": "return", "material": "M2", "warehouse": "WH1", "ref_doc": "NO-SUCH-DOC", "qty": 5, "location": "A"}
+]

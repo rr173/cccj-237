@@ -1,0 +1,19 @@
+[
+  {
+    "material": "M4",
+    "warehouse": "WH9",
+    "received_total": 3000000,
+    "state_totals": {
+      "NORMAL": 2999999,
+      "ISOLATED": 0,
+      "ISSUED": 1
+    },
+    "issued_outstanding_total": 1,
+    "delivery_total": 2999999,
+    "returned_total": 2999998,
+    "live_total": 3000000,
+    "conserved": true,
+    "coverage_ok": true,
+    "coverage_errors": []
+  }
+]

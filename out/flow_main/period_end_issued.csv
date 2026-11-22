@@ -1,0 +1,5 @@
+warehouse,material,state,location,holder,batch,age_start,receipt_seq,seg_start,seg_end,qty
+WH1,M1,ISSUED,,D2,B-OLD,2026-01-10,1,0,27,27
+WH1,M1,ISSUED,,D3,B-OLD,2026-01-10,1,40,60,20
+WH1,M1,ISSUED,,D1,B-OLD,2026-01-10,1,60,80,20
+WH1,M1,ISSUED,,D3,B-NEW,2026-02-15,2,40,50,10

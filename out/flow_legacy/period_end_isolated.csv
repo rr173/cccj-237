@@ -1,0 +1,2 @@
+warehouse,material,state,location,holder,batch,age_start,receipt_seq,seg_start,seg_end,qty
+WH-北区,PX-01,ISOLATED,,ISO-1,B2026A,2026-01-05,1,30,70,40

@@ -1,0 +1,17 @@
+[
+  {"seq": 1,  "action_id": "R1", "op": "receive",  "material": "M1", "warehouse": "WH1", "batch": "B-OLD", "age_start": "2026-01-10", "qty": 100, "location": "A"},
+  {"seq": 2,  "action_id": "R2", "op": "receive",  "material": "M1", "warehouse": "WH1", "batch": "B-NEW", "age_start": "2026-02-15", "qty": 80,  "location": "A"},
+
+  {"seq": 3,  "action_id": "ISO1", "op": "isolate", "material": "M1", "warehouse": "WH1", "qty": 60, "from_location": "A"},
+  {"seq": 4,  "action_id": "D1",   "op": "issue",   "material": "M1", "warehouse": "WH1", "ref_doc": "D1", "qty": 50},
+  {"seq": 5,  "action_id": "REL1", "op": "release", "material": "M1", "warehouse": "WH1", "qty": 40, "isolate_id": "ISO1", "location": "A"},
+
+  {"seq": 6,  "action_id": "D2",   "op": "issue",   "material": "M1", "warehouse": "WH1", "ref_doc": "D2", "qty": 70},
+  {"seq": 7,  "action_id": "T1",   "op": "transfer","material": "M1", "warehouse": "WH1", "qty": 20, "from_location": "A", "location": "L1"},
+  {"seq": 8,  "action_id": "REL2", "op": "release", "material": "M1", "warehouse": "WH1", "qty": 20, "isolate_id": "ISO1", "location": "L2"},
+  {"seq": 9,  "action_id": "D3",   "op": "issue",   "material": "M1", "warehouse": "WH1", "ref_doc": "D3", "qty": 30},
+
+  {"seq": 10, "action_id": "RT2", "op": "return", "material": "M1", "warehouse": "WH1", "ref_doc": "D2", "qty": 25, "location": "L1"},
+  {"seq": 11, "action_id": "RT1", "op": "return", "material": "M1", "warehouse": "WH1", "ref_doc": "D1", "qty": 30, "location": "L2"},
+  {"seq": 12, "action_id": "RT2B", "op": "return", "material": "M1", "warehouse": "WH1", "ref_doc": "D2", "qty": 18, "location": "L1"}
+]

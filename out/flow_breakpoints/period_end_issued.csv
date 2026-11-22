@@ -1,0 +1,3 @@
+warehouse,material,state,location,holder,batch,age_start,receipt_seq,seg_start,seg_end,qty
+WH1,M2,ISSUED,,D1,B1,2026-03-01,1,0,40,40
+WH1,M2,ISSUED,,D1,B1,2026-03-01,1,40,80,40

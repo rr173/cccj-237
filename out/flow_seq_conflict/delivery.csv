@@ -1,0 +1,1 @@
+line_id,warehouse,material,doc_no,issue_seq,batch,age_start,receipt_seq,seg_start,seg_end,qty,returned_qty,outstanding_qty
