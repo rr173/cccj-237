@@ -140,6 +140,7 @@ class MaterialLedger:
         self.issued: dict[str, list[Slice]] = {}      # 领料单号 -> 仍被其占用的切片
         self.lines: list[DeliveryLine] = []           # 全部交付行（含已退部分）
         self.outstanding: dict[str, list[_Outstanding]] = {}  # 领料单 -> 未退回区间
+        self.issue_docs: dict[int, str] = {}          # 领料动作序号 -> 单据号（召回定位用）
         self.receipts: dict[int, Slice] = {}          # 收料序号 -> 原始整段（对账用）
         self.applied_ids: set[str] = set()            # 已执行动作 id（幂等）
 
@@ -253,6 +254,8 @@ class MaterialLedger:
         if not act.ref_doc and not act.action_id:
             raise FlowError("领料动作缺少单据号")
         doc = act.ref_doc or act.action_id
+        if act.seq in self.issue_docs:  # 防御：序号唯一性由上游保证
+            raise FlowError(f"领料序号 {act.seq} 冲突")
         plan = self._plan_cut(self.normal, act.qty)  # 全仓正常库存，按货龄顺序
         cut = self._apply_cut(self.normal, plan)
         held: list[Slice] = []
@@ -270,6 +273,7 @@ class MaterialLedger:
             outs.append(_Outstanding(line, sl.seg_start, sl.seg_end))
         self.issued[doc] = self.issued.get(doc, []) + held
         self.outstanding[doc] = self.outstanding.get(doc, []) + outs
+        self.issue_docs[act.seq] = doc
 
     def _return(self, act: Action) -> None:
         if not act.ref_doc or not act.location:

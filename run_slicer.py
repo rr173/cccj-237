@@ -4,6 +4,9 @@
 用法（在项目根或任意目录均可）::
 
     python3 -I run_slicer.py run --input samples/flow_main.json --out-dir out/main
+    python3 -I run_slicer.py recall --flow samples/recall_flow.json \
+        --production samples/recall_production.json \
+        --request samples/recall_request_ab.json
 """
 
 import os

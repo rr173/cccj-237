@@ -9,6 +9,9 @@
 纯 Python 标准库实现，无第三方依赖，可重复跑；切片用整数区段表达，
 **数量数百万的切片始终是少量对象，不会展开成一百万行**。
 
+另有离线**召回影响分析**入口：给定召回的外部到货与区段，列出受影响的生产收料
+及各自要冻结的区段，不写回生产系统。见 [docs/recall.md](docs/recall.md)。
+
 ## 运行
 
 ```bash
@@ -17,9 +20,17 @@ python3 -I run_slicer.py run --input samples/flow_main.json --out-dir out/main
 
 # 旧系统风格 CSV（中文表头、中文动作名也可识别）
 python3 -I run_slicer.py run --input samples/flow_legacy.csv --out-dir out/legacy
+
+# 召回影响分析（成功输出 JSON 清单；失败退出 1 且不输出清单）
+python3 -I run_slicer.py recall --flow samples/recall_flow.json \
+    --production samples/recall_production.json \
+    --request samples/recall_request_ab.json
 ```
 
 退出码：`0` 全部物料跑通；`1` 存在物料断点（断点前结果仍正常产出）；`2` 输入文件无法解析。
+
+`recall` 子命令：`0` 成功（清单可为空）；`1` 输入/引用/工艺校验失败，此时只向
+stderr 报错、不输出清单。详见 [docs/recall.md](docs/recall.md)。
 
 ## 测试
 
@@ -77,3 +88,4 @@ CSV 中文表头别名（序号/动作编号/动作/物料/仓库/批次/收料�
 - `samples/flow_breakpoints.json`：重复身份幂等、非法退料引用断点。
 - `samples/flow_seq_conflict.json`：顺序号冲突断点。
 - `samples/flow_million.json`：300 万数量切片，全流程后期末只有 4 行切片数据。
+- `samples/recall_*.json`：召回影响分析样例，手算见 `docs/recall.md`。

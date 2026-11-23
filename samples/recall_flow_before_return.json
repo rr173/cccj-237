@@ -1,0 +1,233 @@
+[
+  {
+    "seq": 1,
+    "action_id": "RA",
+    "op": "receive",
+    "material": "RM",
+    "warehouse": "WH-A",
+    "batch": "RA",
+    "age_start": "2026-01-01",
+    "qty": 120,
+    "location": "A"
+  },
+  {
+    "seq": 2,
+    "action_id": "I-A",
+    "op": "issue",
+    "material": "RM",
+    "warehouse": "WH-A",
+    "ref_doc": "I-A",
+    "qty": 40
+  },
+  {
+    "seq": 3,
+    "action_id": "I-B",
+    "op": "issue",
+    "material": "RM",
+    "warehouse": "WH-A",
+    "ref_doc": "I-B",
+    "qty": 30
+  },
+  {
+    "seq": 4,
+    "action_id": "I-C",
+    "op": "issue",
+    "material": "RM",
+    "warehouse": "WH-A",
+    "ref_doc": "I-C",
+    "qty": 30
+  },
+  {
+    "seq": 5,
+    "action_id": "I-D",
+    "op": "issue",
+    "material": "RM",
+    "warehouse": "WH-A",
+    "ref_doc": "I-D",
+    "qty": 20
+  },
+  {
+    "seq": 6,
+    "action_id": "PA",
+    "op": "receive",
+    "material": "MA",
+    "warehouse": "WH-A",
+    "batch": "PA",
+    "age_start": "2026-01-02",
+    "qty": 40,
+    "location": "A"
+  },
+  {
+    "seq": 7,
+    "action_id": "PC",
+    "op": "receive",
+    "material": "MC",
+    "warehouse": "WH-C",
+    "batch": "PC",
+    "age_start": "2026-01-04",
+    "qty": 30,
+    "location": "C"
+  },
+  {
+    "seq": 8,
+    "action_id": "IP-FA",
+    "op": "issue",
+    "material": "MA",
+    "warehouse": "WH-A",
+    "ref_doc": "IP-FA",
+    "qty": 40
+  },
+  {
+    "seq": 9,
+    "action_id": "IP-FC",
+    "op": "issue",
+    "material": "MC",
+    "warehouse": "WH-C",
+    "ref_doc": "IP-FC",
+    "qty": 30
+  },
+  {
+    "seq": 10,
+    "action_id": "PF",
+    "op": "receive",
+    "material": "MP",
+    "warehouse": "WH-C",
+    "batch": "PF",
+    "age_start": "2026-01-05",
+    "qty": 70,
+    "location": "C"
+  },
+  {
+    "seq": 11,
+    "action_id": "I-D1",
+    "op": "issue",
+    "material": "MP",
+    "warehouse": "WH-C",
+    "ref_doc": "I-D1",
+    "qty": 20
+  },
+  {
+    "seq": 12,
+    "action_id": "I-D2",
+    "op": "issue",
+    "material": "MP",
+    "warehouse": "WH-C",
+    "ref_doc": "I-D2",
+    "qty": 50
+  },
+  {
+    "seq": 13,
+    "action_id": "PD",
+    "op": "receive",
+    "material": "MD",
+    "warehouse": "WH-D",
+    "batch": "PD",
+    "age_start": "2026-01-06",
+    "qty": 20,
+    "location": "D"
+  },
+  {
+    "seq": 14,
+    "action_id": "PE",
+    "op": "receive",
+    "material": "ME",
+    "warehouse": "WH-E",
+    "batch": "PE",
+    "age_start": "2026-01-07",
+    "qty": 50,
+    "location": "E"
+  },
+  {
+    "seq": 15,
+    "action_id": "PM",
+    "op": "receive",
+    "material": "MM",
+    "warehouse": "WH-F",
+    "batch": "PM",
+    "age_start": "2026-01-08",
+    "qty": 60,
+    "location": "F"
+  },
+  {
+    "seq": 17,
+    "action_id": "RD",
+    "op": "receive",
+    "material": "RM",
+    "warehouse": "WH-Z",
+    "batch": "RD",
+    "age_start": "2026-05-01",
+    "qty": 50,
+    "location": "Z"
+  },
+  {
+    "seq": 18,
+    "action_id": "J-E",
+    "op": "issue",
+    "material": "RM",
+    "warehouse": "WH-Z",
+    "ref_doc": "J-E",
+    "qty": 50
+  },
+  {
+    "seq": 19,
+    "action_id": "P-E1",
+    "op": "receive",
+    "material": "MA",
+    "warehouse": "WH-Z",
+    "batch": "P-E1",
+    "age_start": "2026-05-02",
+    "qty": 25,
+    "location": "Z"
+  },
+  {
+    "seq": 20,
+    "action_id": "P-E2",
+    "op": "receive",
+    "material": "MA",
+    "warehouse": "WH-Z",
+    "batch": "P-E2",
+    "age_start": "2026-05-03",
+    "qty": 25,
+    "location": "Z"
+  },
+  {
+    "seq": 21,
+    "action_id": "IP-E-CLEAN",
+    "op": "issue",
+    "material": "MA",
+    "warehouse": "WH-Z",
+    "ref_doc": "IP-E-CLEAN",
+    "qty": 15
+  },
+  {
+    "seq": 22,
+    "action_id": "IP-E-HIT",
+    "op": "issue",
+    "material": "MA",
+    "warehouse": "WH-Z",
+    "ref_doc": "IP-E-HIT",
+    "qty": 10
+  },
+  {
+    "seq": 23,
+    "action_id": "RQ1",
+    "op": "receive",
+    "material": "MQ",
+    "warehouse": "WH-Y",
+    "batch": "RQ1",
+    "age_start": "2026-05-04",
+    "qty": 15,
+    "location": "Y"
+  },
+  {
+    "seq": 24,
+    "action_id": "RQ2",
+    "op": "receive",
+    "material": "MQ2",
+    "warehouse": "WH-Y",
+    "batch": "RQ2",
+    "age_start": "2026-05-05",
+    "qty": 10,
+    "location": "Y"
+  }
+]

@@ -4,6 +4,8 @@
 
     python3 -I -m req_slicer.cli run --input 流水.json --out-dir 输出目录/
     python3 -I -m req_slicer.cli run --input 旧系统导出.csv --out-dir 输出目录/
+    python3 -I -m req_slicer.cli recall --flow 流水.json \\
+        --production 生产清单.json --request 召回请求.json
 """
 
 from __future__ import annotations
@@ -15,6 +17,7 @@ from .engine.inputs import parse_file, InputError
 from .engine.model import NORMAL, ISOLATED, ISSUED
 from .engine.outputs import write_outputs
 from .engine.runner import run
+from .recall.cli import _cmd_recall
 
 
 def _cmd_run(args: argparse.Namespace) -> int:
@@ -55,6 +58,14 @@ def build_parser() -> argparse.ArgumentParser:
     p_run.add_argument("--input", required=True, help="流水文件（.json 或 .csv）")
     p_run.add_argument("--out-dir", required=True, help="产物输出目录")
     p_run.set_defaults(func=_cmd_run)
+
+    p_recall = sub.add_parser(
+        "recall", help="按外部到货召回请求计算受影响的生产收料与冻结区段")
+    p_recall.add_argument("--flow", required=True,
+                          help="仓内流水（.json 或 .csv，现有格式）")
+    p_recall.add_argument("--production", required=True, help="生产单清单 JSON")
+    p_recall.add_argument("--request", required=True, help="召回请求 JSON")
+    p_recall.set_defaults(func=_cmd_recall)
     return parser
 
 

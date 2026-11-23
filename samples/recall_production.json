@@ -1,0 +1,96 @@
+{
+  "work_orders": [
+    {
+      "doc_no": "WO-A",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-A", "material": "RM", "action_seq": 2}
+      ],
+      "receipts": [
+        {"warehouse": "WH-A", "material": "MA", "action_seq": 6}
+      ]
+    },
+    {
+      "doc_no": "WO-B",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-A", "material": "RM", "action_seq": 3}
+      ],
+      "receipts": [
+        {"warehouse": "WH-C", "material": "MC", "action_seq": 7}
+      ]
+    },
+    {
+      "doc_no": "WO-F",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-A", "material": "MA", "action_seq": 8},
+        {"warehouse": "WH-C", "material": "MC", "action_seq": 9}
+      ],
+      "receipts": [
+        {"warehouse": "WH-C", "material": "MP", "action_seq": 10}
+      ]
+    },
+    {
+      "doc_no": "WO-D1",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-C", "material": "MP", "action_seq": 11}
+      ],
+      "receipts": [
+        {"warehouse": "WH-D", "material": "MD", "action_seq": 13}
+      ]
+    },
+    {
+      "doc_no": "WO-D2",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-C", "material": "MP", "action_seq": 12}
+      ],
+      "receipts": [
+        {"warehouse": "WH-E", "material": "ME", "action_seq": 14}
+      ]
+    },
+    {
+      "doc_no": "WO-M",
+      "process": "mixed",
+      "issues": [
+        {"warehouse": "WH-A", "material": "RM", "action_seq": 5}
+      ],
+      "receipts": [
+        {"warehouse": "WH-F", "material": "MM", "action_seq": 15}
+      ]
+    },
+    {
+      "doc_no": "WO-E",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-Z", "material": "RM", "action_seq": 18}
+      ],
+      "receipts": [
+        {"warehouse": "WH-Z", "material": "MA", "action_seq": 19},
+        {"warehouse": "WH-Z", "material": "MA", "action_seq": 20}
+      ]
+    },
+    {
+      "doc_no": "WO-CLEAN",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-Z", "material": "MA", "action_seq": 21}
+      ],
+      "receipts": [
+        {"warehouse": "WH-Y", "material": "MQ", "action_seq": 23}
+      ]
+    },
+    {
+      "doc_no": "WO-HIT",
+      "process": "ordered",
+      "issues": [
+        {"warehouse": "WH-Z", "material": "MA", "action_seq": 22}
+      ],
+      "receipts": [
+        {"warehouse": "WH-Y", "material": "MQ2", "action_seq": 24}
+      ]
+    }
+  ]
+}
