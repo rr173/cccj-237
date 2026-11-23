@@ -12,5 +12,18 @@ for f in samples/flow_main.json samples/flow_legacy.csv \
     echo ">> $f"
     python3 -I run_slicer.py run --input "$f" --out-dir "out/${name%.*}" || true
 done
+for limit in 1 2; do
+    echo "================================================================"
+    echo ">> handover_dispute (publish-limit $limit)"
+    python3 -I run_slicer.py handover \
+        --flow samples/handover_dispute_flow.json \
+        --handover samples/handover_dispute.json \
+        --publish-limit "$limit" --out "out/handover_dispute_${limit}.json" || true
+done
+echo "================================================================"
+echo ">> handover_main (publish-limit 4)"
+python3 -I run_slicer.py handover \
+    --flow samples/handover_flow.json --handover samples/handover_main.json \
+    --publish-limit 4 --out out/handover_main.json || true
 echo
 echo "全部产物见 out/ ；断点样例退出码为 1 属预期（errors.json 内含断点说明）。"

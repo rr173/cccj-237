@@ -1,0 +1,10 @@
+[
+  {"seq": 1,  "action_id": "RA1", "op": "receive", "material": "RM", "warehouse": "WH-A", "batch": "RA1", "age_start": "2026-01-01", "qty": 5,  "location": "A"},
+  {"seq": 2,  "action_id": "RA2", "op": "receive", "material": "RM", "warehouse": "WH-A", "batch": "RA2", "age_start": "2026-01-02", "qty": 7,  "location": "A"},
+
+  {"seq": 3,  "action_id": "IS-A", "op": "issue", "material": "RM", "warehouse": "WH-A", "ref_doc": "IS-A", "qty": 12},
+  {"seq": 4,  "action_id": "RT-A", "op": "return","material": "RM", "warehouse": "WH-A", "ref_doc": "IS-A", "qty": 3, "location": "A"},
+
+  {"seq": 10, "action_id": "RC1", "op": "receive", "material": "RM", "warehouse": "WH-C", "batch": "RC1", "age_start": "2026-01-03", "qty": 12, "location": "C"},
+  {"seq": 12, "action_id": "RC2", "op": "receive", "material": "RM", "warehouse": "WH-C", "batch": "RC2", "age_start": "2026-01-04", "qty": 10, "location": "C"}
+]

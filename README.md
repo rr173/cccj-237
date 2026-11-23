@@ -12,6 +12,10 @@
 另有离线**召回影响分析**入口：给定召回的外部到货与区段，列出受影响的生产收料
 及各自要冻结的区段，不写回生产系统。见 [docs/recall.md](docs/recall.md)。
 
+另有离线**交接对账**入口：结算日给定凭证发布号上限，按调拨清单与签发/改签/作废
+的签收凭证，列出哪些发货已签收、哪些待签收、哪些有争议；只生成清单、不动库存。
+见 [docs/handover.md](docs/handover.md)。
+
 ## 运行
 
 ```bash
@@ -25,12 +29,20 @@ python3 -I run_slicer.py run --input samples/flow_legacy.csv --out-dir out/legac
 python3 -I run_slicer.py recall --flow samples/recall_flow.json \
     --production samples/recall_production.json \
     --request samples/recall_request_ab.json
+
+# 交接对账（发布号上限内取最高版本；只生成清单，不动库存）
+python3 -I run_slicer.py handover \
+    --flow samples/handover_dispute_flow.json \
+    --handover samples/handover_dispute.json --publish-limit 1
 ```
 
 退出码：`0` 全部物料跑通；`1` 存在物料断点（断点前结果仍正常产出）；`2` 输入文件无法解析。
 
 `recall` 子命令：`0` 成功（清单可为空）；`1` 输入/引用/工艺校验失败，此时只向
 stderr 报错、不输出清单。详见 [docs/recall.md](docs/recall.md)。
+
+`handover` 子命令：`0` 成功（清单可为空）；`1` 输入/引用/凭证版本/签收校验失败，
+此时只向 stderr 报错、不输出清单。详见 [docs/handover.md](docs/handover.md)。
 
 ## 测试
 
@@ -89,3 +101,5 @@ CSV 中文表头别名（序号/动作编号/动作/物料/仓库/批次/收料�
 - `samples/flow_seq_conflict.json`：顺序号冲突断点。
 - `samples/flow_million.json`：300 万数量切片，全流程后期末只有 4 行切片数据。
 - `samples/recall_*.json`：召回影响分析样例，手算见 `docs/recall.md`。
+- `samples/handover_flow.json` + `samples/handover_main.json`：版本链、作废与退料；手算见 `docs/handover.md`。
+- `samples/handover_dispute_flow.json` + `samples/handover_dispute.json`：两票争用同一笔收料的局部区段，只改一份凭证即解除两边争议。

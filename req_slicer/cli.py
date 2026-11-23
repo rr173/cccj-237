@@ -6,6 +6,8 @@
     python3 -I -m req_slicer.cli run --input 旧系统导出.csv --out-dir 输出目录/
     python3 -I -m req_slicer.cli recall --flow 流水.json \\
         --production 生产清单.json --request 召回请求.json
+    python3 -I -m req_slicer.cli handover --flow 流水.json \\
+        --handover 交接.json --publish-limit 3
 """
 
 from __future__ import annotations
@@ -18,6 +20,7 @@ from .engine.model import NORMAL, ISOLATED, ISSUED
 from .engine.outputs import write_outputs
 from .engine.runner import run
 from .recall.cli import _cmd_recall
+from .handover.cli import build_parser as build_handover_parser
 
 
 def _cmd_run(args: argparse.Namespace) -> int:
@@ -69,8 +72,18 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _register_handover(parser: argparse.ArgumentParser) -> None:
+    """把交接对账挂到同一入口；参数定义与独立 CLI 共用一份。"""
+    sub = next(a for a in parser._actions
+               if isinstance(a, argparse._SubParsersAction))
+    sub.add_parser("handover", add_help=False,
+                   parents=[build_handover_parser()],
+                   help="按发布号上限离线核对调拨发货的销账、催收与争议清单")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
+    _register_handover(parser)
     args = parser.parse_args(argv)
     return args.func(args)
 

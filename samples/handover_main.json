@@ -1,0 +1,100 @@
+{
+  "transfers": [
+    {
+      "doc_no": "T1",
+      "issue": {
+        "warehouse": "WH-A",
+        "material": "RM",
+        "action_seq": 3
+      },
+      "dest_warehouse": "WH-C"
+    }
+  ],
+  "vouchers": [
+    {
+      "voucher_no": "V3",
+      "publish_no": 3,
+      "status": "signed",
+      "doc_no": "T1",
+      "ship_segment": [
+        1,
+        3
+      ],
+      "receipt": {
+        "warehouse": "WH-C",
+        "material": "RM",
+        "action_seq": 10,
+        "start": 1
+      }
+    },
+    {
+      "voucher_no": "V2",
+      "publish_no": 1,
+      "status": "signed",
+      "doc_no": "T1",
+      "ship_segment": [
+        2,
+        6
+      ],
+      "receipt": {
+        "warehouse": "WH-C",
+        "material": "RM",
+        "action_seq": 10,
+        "start": 2
+      }
+    },
+    {
+      "voucher_no": "V2",
+      "publish_no": 2,
+      "status": "signed",
+      "doc_no": "T1",
+      "ship_segment": [
+        2,
+        6
+      ],
+      "receipt": {
+        "warehouse": "WH-C",
+        "material": "RM",
+        "action_seq": 10,
+        "start": 2
+      }
+    },
+    {
+      "voucher_no": "V1",
+      "publish_no": 1,
+      "status": "signed",
+      "doc_no": "T1",
+      "ship_segment": [
+        0,
+        5
+      ],
+      "receipt": {
+        "warehouse": "WH-C",
+        "material": "RM",
+        "action_seq": 10,
+        "start": 0
+      }
+    },
+    {
+      "voucher_no": "V1",
+      "publish_no": 2,
+      "status": "signed",
+      "doc_no": "T1",
+      "ship_segment": [
+        0,
+        5
+      ],
+      "receipt": {
+        "warehouse": "WH-C",
+        "material": "RM",
+        "action_seq": 10,
+        "start": 0
+      }
+    },
+    {
+      "voucher_no": "V3",
+      "publish_no": 4,
+      "status": "void"
+    }
+  ]
+}

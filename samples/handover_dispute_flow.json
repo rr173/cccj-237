@@ -1,0 +1,12 @@
+[
+  {"seq": 1,  "action_id": "RA1", "op": "receive", "material": "RM", "warehouse": "WH-A", "batch": "RA1", "age_start": "2026-01-01", "qty": 5,  "location": "A"},
+  {"seq": 2,  "action_id": "RA2", "op": "receive", "material": "RM", "warehouse": "WH-A", "batch": "RA2", "age_start": "2026-01-02", "qty": 7,  "location": "A"},
+  {"seq": 3,  "action_id": "IS-T1", "op": "issue", "material": "RM", "warehouse": "WH-A", "ref_doc": "IS-T1", "qty": 12},
+
+  {"seq": 5,  "action_id": "RB1", "op": "receive", "material": "RM", "warehouse": "WH-B", "batch": "RB1", "age_start": "2026-01-03", "qty": 6,  "location": "B"},
+  {"seq": 6,  "action_id": "IS-T2", "op": "issue", "material": "RM", "warehouse": "WH-B", "ref_doc": "IS-T2", "qty": 6},
+  {"seq": 7,  "action_id": "RT-T2", "op": "return","material": "RM", "warehouse": "WH-B", "ref_doc": "IS-T2", "qty": 2, "location": "B"},
+
+  {"seq": 10, "action_id": "RC1", "op": "receive", "material": "RM", "warehouse": "WH-C", "batch": "RC1", "age_start": "2026-01-04", "qty": 30, "location": "C"},
+  {"seq": 11, "action_id": "RC2", "op": "receive", "material": "RM", "warehouse": "WH-C", "batch": "RC2", "age_start": "2026-01-05", "qty": 30, "location": "C"}
+]

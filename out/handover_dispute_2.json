@@ -1,0 +1,167 @@
+{
+  "publish_limit": 2,
+  "transfers": [
+    {
+      "doc_no": "T1",
+      "issue": {
+        "warehouse": "WH-A",
+        "material": "RM",
+        "action_seq": 3
+      },
+      "dest_warehouse": "WH-C",
+      "ship_qty": 12,
+      "segments": [
+        {
+          "ship": {
+            "start": 0,
+            "end": 5,
+            "qty": 5
+          },
+          "status": "RECEIVED",
+          "vouchers": [
+            {
+              "voucher_no": "V1",
+              "publish_no": 1,
+              "ship": {
+                "start": 0,
+                "end": 5,
+                "unreturned_qty": 5
+              },
+              "receipt_segments": [
+                {
+                  "receipt": {
+                    "warehouse": "WH-C",
+                    "material": "RM",
+                    "action_seq": 10
+                  },
+                  "start": 0,
+                  "end": 5
+                }
+              ]
+            }
+          ],
+          "source": {
+            "receipt": {
+              "warehouse": "WH-C",
+              "material": "RM",
+              "action_seq": 10
+            },
+            "start": 0,
+            "end": 5
+          },
+          "other_claim_vouchers": []
+        },
+        {
+          "ship": {
+            "start": 5,
+            "end": 10,
+            "qty": 5
+          },
+          "status": "RECEIVED",
+          "vouchers": [
+            {
+              "voucher_no": "V1",
+              "publish_no": 1,
+              "ship": {
+                "start": 5,
+                "end": 10,
+                "unreturned_qty": 5
+              },
+              "receipt_segments": [
+                {
+                  "receipt": {
+                    "warehouse": "WH-C",
+                    "material": "RM",
+                    "action_seq": 10
+                  },
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "source": {
+            "receipt": {
+              "warehouse": "WH-C",
+              "material": "RM",
+              "action_seq": 10
+            },
+            "start": 5,
+            "end": 10
+          },
+          "other_claim_vouchers": []
+        },
+        {
+          "ship": {
+            "start": 10,
+            "end": 12,
+            "qty": 2
+          },
+          "status": "PENDING",
+          "other_claim_vouchers": []
+        }
+      ]
+    },
+    {
+      "doc_no": "T2",
+      "issue": {
+        "warehouse": "WH-B",
+        "material": "RM",
+        "action_seq": 6
+      },
+      "dest_warehouse": "WH-C",
+      "ship_qty": 6,
+      "segments": [
+        {
+          "ship": {
+            "start": 0,
+            "end": 4,
+            "qty": 4
+          },
+          "status": "RECEIVED",
+          "vouchers": [
+            {
+              "voucher_no": "V2",
+              "publish_no": 2,
+              "ship": {
+                "start": 0,
+                "end": 4,
+                "unreturned_qty": 4
+              },
+              "receipt_segments": [
+                {
+                  "receipt": {
+                    "warehouse": "WH-C",
+                    "material": "RM",
+                    "action_seq": 11
+                  },
+                  "start": 0,
+                  "end": 4
+                }
+              ]
+            }
+          ],
+          "source": {
+            "receipt": {
+              "warehouse": "WH-C",
+              "material": "RM",
+              "action_seq": 11
+            },
+            "start": 0,
+            "end": 4
+          },
+          "other_claim_vouchers": []
+        },
+        {
+          "ship": {
+            "start": 4,
+            "end": 6,
+            "qty": 2
+          },
+          "status": "RETURNED",
+          "other_claim_vouchers": []
+        }
+      ]
+    }
+  ]
+}
