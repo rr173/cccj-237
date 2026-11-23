@@ -25,5 +25,10 @@ echo ">> handover_main (publish-limit 4)"
 python3 -I run_slicer.py handover \
     --flow samples/handover_flow.json --handover samples/handover_main.json \
     --publish-limit 4 --out out/handover_main.json || true
+echo "================================================================"
+echo ">> billing (period [3,12))"
+python3 -I run_slicer.py billing \
+    --flow samples/billing_flow.json --prices samples/billing_prices.json \
+    --start 3 --end 12 --out out/billing.json || true
 echo
 echo "全部产物见 out/ ；断点样例退出码为 1 属预期（errors.json 内含断点说明）。"

@@ -30,6 +30,7 @@ _ALIASES = {
     "from_location": "from_location", "来源库位": "from_location",
     "isolate_id": "isolate_id", "隔离动作": "isolate_id", "隔离id": "isolate_id",
     "ref_doc": "ref_doc", "领料单号": "ref_doc", "引用单据": "ref_doc", "单据号": "ref_doc",
+    "minute": "minute", "分钟": "minute", "时间分钟": "minute",
 }
 
 _OP_ALIASES = {
@@ -89,11 +90,22 @@ def _coerce(row: dict, source: str, lineno: int) -> Action:
         if qty <= 0:
             raise InputError(f"{source} 第 {lineno} 行数量必须为正整数")
 
+    minute = data.pop("minute", None)
+    if minute is not None:
+        if isinstance(minute, bool):
+            raise InputError(f"{source} 第 {lineno} 行 minute 必须是非负整数")
+        try:
+            minute = int(minute)
+        except (TypeError, ValueError):
+            raise InputError(f"{source} 第 {lineno} 行 minute 不是整数: {minute!r}")
+        if minute < 0:
+            raise InputError(f"{source} 第 {lineno} 行 minute 必须是非负整数")
+
     clean = {k: (str(v) if k in _STR_FIELDS and v is not None else v)
              for k, v in data.items()}
     return Action(seq=seq, action_id=action_id, op=op,
                   material=str(material), warehouse=str(warehouse),
-                  qty=qty, raw=dict(row), **clean)
+                  qty=qty, minute=minute, raw=dict(row), **clean)
 
 
 def parse_file(path: str) -> list[Action]:

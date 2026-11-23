@@ -1,0 +1,8 @@
+{
+  "threshold_minutes": 5,
+  "rates": [
+    {"warehouse": "WH1", "location": "A", "effective_minute": 0, "price_tier1": 10, "price_tier2": 18},
+    {"warehouse": "WH1", "location": "A", "effective_minute": 8, "price_tier1": 12, "price_tier2": 20},
+    {"warehouse": "WH1", "location": "B", "effective_minute": 0, "price_tier1": 7,  "price_tier2": 15}
+  ]
+}

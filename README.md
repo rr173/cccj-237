@@ -16,6 +16,10 @@
 的签收凭证，列出哪些发货已签收、哪些待签收、哪些有争议；只生成清单、不动库存。
 见 [docs/handover.md](docs/handover.md)。
 
+另有离线**仓储计费**入口：财务输入带整数分钟的 JSON 流水、JSON 价目表和账期
+`[start, end)`，按原收料与库位核对正常在库的两档件分钟与微元费用；不改库存、
+不做跨仓归集或发票。见 [docs/billing.md](docs/billing.md)。
+
 ## 运行
 
 ```bash
@@ -34,6 +38,11 @@ python3 -I run_slicer.py recall --flow samples/recall_flow.json \
 python3 -I run_slicer.py handover \
     --flow samples/handover_dispute_flow.json \
     --handover samples/handover_dispute.json --publish-limit 1
+
+# 离线仓储计费（按账期 [start,end) 核对正常在库费用，不动库存）
+python3 -I run_slicer.py billing \
+    --flow samples/billing_flow.json \
+    --prices samples/billing_prices.json --start 3 --end 12
 ```
 
 退出码：`0` 全部物料跑通；`1` 存在物料断点（断点前结果仍正常产出）；`2` 输入文件无法解析。
@@ -43,6 +52,10 @@ stderr 报错、不输出清单。详见 [docs/recall.md](docs/recall.md)。
 
 `handover` 子命令：`0` 成功（清单可为空）；`1` 输入/引用/凭证版本/签收校验失败，
 此时只向 stderr 报错、不输出清单。详见 [docs/handover.md](docs/handover.md)。
+
+`billing` 子命令：`0` 成功（无占用时为空明细、零费用）；`1` 流水断点、时间/价目
+非法、账期非法或应收费时间缺价，此时只向 stderr 报错并定位动作或库位与分钟时段、
+不输出账单。详见 [docs/billing.md](docs/billing.md)。
 
 ## 测试
 
@@ -103,3 +116,4 @@ CSV 中文表头别名（序号/动作编号/动作/物料/仓库/批次/收料�
 - `samples/recall_*.json`：召回影响分析样例，手算见 `docs/recall.md`。
 - `samples/handover_flow.json` + `samples/handover_main.json`：版本链、作废与退料；手算见 `docs/handover.md`。
 - `samples/handover_dispute_flow.json` + `samples/handover_dispute.json`：两票争用同一笔收料的局部区段，只改一份凭证即解除两边争议。
+- `samples/billing_flow.json` + `samples/billing_prices.json`：离线计费手算样例（同一收料部分隔离后返回、另一部分移位；账期中途开始，覆盖跨档、改价与同分钟进出），手算见 [docs/billing.md](docs/billing.md)。

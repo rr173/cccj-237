@@ -1,0 +1,12 @@
+[
+  {"seq": 1, "action_id": "R1",   "op": "receive",  "material": "M1", "warehouse": "WH1", "batch": "B1", "age_start": "2026-01-01", "qty": 10, "location": "A", "minute": 0},
+
+  {"seq": 2, "action_id": "ISO1", "op": "isolate",  "material": "M1", "warehouse": "WH1", "qty": 4,  "from_location": "A", "minute": 2},
+  {"seq": 3, "action_id": "T1",   "op": "transfer", "material": "M1", "warehouse": "WH1", "qty": 3,  "from_location": "A", "location": "B", "minute": 4},
+  {"seq": 4, "action_id": "REL1", "op": "release",  "material": "M1", "warehouse": "WH1", "qty": 4,  "isolate_id": "ISO1", "location": "A", "minute": 6},
+
+  {"seq": 5, "action_id": "D1",   "op": "issue",    "material": "M1", "warehouse": "WH1", "ref_doc": "D1", "qty": 2, "minute": 8},
+  {"seq": 6, "action_id": "RT1",  "op": "return",   "material": "M1", "warehouse": "WH1", "ref_doc": "D1", "qty": 2, "location": "B", "minute": 8},
+
+  {"seq": 7, "action_id": "D2",   "op": "issue",    "material": "M1", "warehouse": "WH1", "ref_doc": "D2", "qty": 3, "minute": 12}
+]

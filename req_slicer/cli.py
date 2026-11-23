@@ -8,6 +8,8 @@
         --production 生产清单.json --request 召回请求.json
     python3 -I -m req_slicer.cli handover --flow 流水.json \\
         --handover 交接.json --publish-limit 3
+    python3 -I -m req_slicer.cli billing --flow 流水.json \\
+        --prices 价目表.json --start 3 --end 12
 """
 
 from __future__ import annotations
@@ -21,6 +23,7 @@ from .engine.outputs import write_outputs
 from .engine.runner import run
 from .recall.cli import _cmd_recall
 from .handover.cli import build_parser as build_handover_parser
+from .billing.cli import build_parser as build_billing_parser
 
 
 def _cmd_run(args: argparse.Namespace) -> int:
@@ -79,6 +82,9 @@ def _register_handover(parser: argparse.ArgumentParser) -> None:
     sub.add_parser("handover", add_help=False,
                    parents=[build_handover_parser()],
                    help="按发布号上限离线核对调拨发货的销账、催收与争议清单")
+    sub.add_parser("billing", add_help=False,
+                   parents=[build_billing_parser()],
+                   help="按账期离线核对仓内正常在库费用（按原收料与库位，不动库存）")
 
 
 def main(argv: list[str] | None = None) -> int:

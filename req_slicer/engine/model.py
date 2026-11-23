@@ -80,6 +80,7 @@ class Action:
     from_location: Optional[str] = None  # transfer/isolate 的来源库位
     isolate_id: Optional[str] = None     # release 引用的隔离动作 id
     ref_doc: Optional[str] = None        # return 引用的领料单号
+    minute: Optional[int] = None         # 统一时间基准（非负整数分钟）；离线计费需要
     raw: dict = field(default_factory=dict)
 
 

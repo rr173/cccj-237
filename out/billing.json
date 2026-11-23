@@ -1,0 +1,40 @@
+{
+  "period": {
+    "start": 3,
+    "end": 12
+  },
+  "threshold_minutes": 5,
+  "details": [
+    {
+      "warehouse": "WH1",
+      "material": "M1",
+      "receipt_seq": 1,
+      "location": "A",
+      "piece_minutes": {
+        "tier1": 19,
+        "tier2": 27
+      },
+      "fee_micro": {
+        "tier1": 194,
+        "tier2": 522
+      },
+      "fee_total_micro": 716
+    },
+    {
+      "warehouse": "WH1",
+      "material": "M1",
+      "receipt_seq": 1,
+      "location": "B",
+      "piece_minutes": {
+        "tier1": 5,
+        "tier2": 27
+      },
+      "fee_micro": {
+        "tier1": 35,
+        "tier2": 405
+      },
+      "fee_total_micro": 440
+    }
+  ],
+  "total_fee_micro": 1156
+}
